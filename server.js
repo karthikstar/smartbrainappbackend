@@ -24,10 +24,8 @@ const knex = require('knex')
 const db = knex ({
   client: 'pg',
   connection: {
-    host : 'postgresql-animate-66451',
-    user : 'postgres',
-    password : '@kar2000',
-    database : 'smartbrain'
+    host : process.env.DATABASE_URL,
+    ssl : true,
   }
 });
 const register = require('./controllers/register')
